@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Formularios</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+	<main>
+		<section id="login" class="sform show">
+			<div class="wrapper">
+				<div class="title">
+					<p>Iniciar sesión</p>
+					<p class="small">o <a class="cambiar-a-form-2" href="javascript:void(0)">crear una cuenta</a></p>
+				</div>
+				<div class="form">
+					<form action="">
+						<div class="field">
+							<label for="iemail"></label>
+							<input id="iemail" type="email" placeholder="Correo">
+							<p class="small error"></p>
+						</div>
+						<div class="field">
+							<label for="ipassword"></label>
+							<input id="ipassword" type="password" placeholder="Contraseña" value="A1drtf">
+							<!-- oninvalid="setCustomValidity('La contraseña debe tener al menos 6 caracteres. Al menos una minuscula y una mayuscula, un dígito y alguno de los caracteres %&=¡!')" -->
+							<p class="small error"></p>
+						</div>
+						<div class="submit">
+							<div class="field">
+								<input id="irecordar" type="checkbox">
+								<label for="irecordar">Recordar</label>
+								<p class="small error"></p>
+							</div>
+							<input id="isubmit" type="submit" value="Iniciar sesión">
+						</div>
+					</form>
+				</div>
+			</div>	
+		</section>
+
+
+		<section id="registro" class="sform hide">
+			<div class="wrapper">
+				<div class="title">
+					<p>Crear una cuenta</p>
+					<p class="small">o <a class="cambiar-a-form-1" href="javascript:void(0)">iniciar sesión</a></p>
+				</div>
+				<div class="form">
+					<form action="">
+						<div class="field">
+							<label for="rnombre"></label>
+							<input id="rnombre" placeholder="Nombre">
+							<p class="small error"></p>
+						</div>
+						<div class="field">
+							<label for="rapellidos"></label>
+							<input id="rapellidos" placeholder="Apellidos">
+							<p class="small error"></p>
+						</div>
+						<div class="field">
+							<label for="remail"></label>
+							<input id="remail" placeholder="Correo electrónico">
+							<p class="small error"></p>
+						</div>
+						<div class="field">
+							<label for="rpassword"></label>
+							<input id="rpassword" type="password" placeholder="Contraseña">
+							<p class="small error"></p>
+						</div>
+						<div class="field">
+							<label for="r2password"></label>
+							<input id="r2password" type="password" placeholder="Repite Contraseña">
+							<p class="small error"></p>
+						</div>
+						<div class="submit">
+							<div class="field">
+								<input id="rrecordar" type="checkbox">
+								<label for="rrecordar">Acepto las condiciones</label>
+							</div>
+							<input id="rsubmit" type="submit" value="Regístate">
+						</div>
+					</form>
+				</div>
+			</div>	
+		</section>
+	</main>
+
+	<script src="js/main.js"></script>
+	<script src="js/valform.js"></script>
+</body>
+</html>

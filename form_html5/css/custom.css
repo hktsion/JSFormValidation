@@ -1,0 +1,71 @@
+*{margin:0; padding: 0;}
+html, body{ width: 100%; overflow-x: hidden; box-sizing: border-box; font-family: 'Roboto', sans-serif;}
+main, main>section .wrapper{ width: 100%; }
+main>section{
+	width: 35%;
+	margin: 35px auto;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+p{font-size: 16px;}
+.small{ font-size: 12px; }
+.error{ color: crimson; margin-top: 5px}
+a{ color: #056eab; text-decoration: none; transition: color 300ms ease-in-out;}
+a:hover{ color: #3ba1dc;}
+
+/* titulo dentro del formulario >> Inciar sesion o crear una cuenta */
+.title, .submit{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/*formulario*/
+.form{ width: 100%; margin:15px auto; }
+.form input{ 
+	width: 100%; 
+	font-family: 'Roboto', sans-serif;
+	box-sizing: border-box;
+	padding: 7px;
+	border: 1px solid#212121;
+	border-radius: 3px;
+}
+.field{ margin: 20px 0px; }
+[type="submit"]{
+	width: 33.33% !important;
+	color: #fff;
+	background: #3ba1dc;
+	border: 2px solid #3ba1dc !important;
+	transition: all 300ms ease-in-out;
+}
+[type="submit"]:hover{
+	cursor: pointer;
+	background: #056eab;
+	border: 2px solid #056eab !important;
+}
+
+.submit >.field{ 
+	width: 50%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+.submit >.field input{ width: 10% }
+
+.hide{ display: none; }
+.show{ display: block; }
+
+
+/*tablets*/
+@media only screen and (max-width: 600px) {
+	main>section{ width: 70%; }
+	label{  font-size: 12px;}
+}
+
+
+/*moviles*/
+@media only screen and (max-width: 420px) {
+	main>section{ width: 90%; }
+	label{  font-size: 10px;}
+}
