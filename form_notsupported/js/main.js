@@ -1,12 +1,14 @@
-'use strict';
-document.addEventListener('DOMContentLoaded', function(){
-	let hide = 'hide';
-	let show = 'show';
-	let states = ['show', 'hide'];
+(function(d){
+
+	'use strict';
+	d.addEventListener('DOMContentLoaded', function(){
+		let hide = 'hide';
+		let show = 'show';
+		let states = ['show', 'hide'];
 
 	//Cambiar de formulario
-	let alinks = document.querySelectorAll('[class^="cambiar"]');
-	let _2forms = document.querySelectorAll('section.sform');
+	let alinks = d.querySelectorAll('[class^="cambiar"]');
+	let _2forms = d.querySelectorAll('section.sform');
 
 	//console.log(alinks);
 	//console.log(_2forms);
@@ -25,17 +27,22 @@ document.addEventListener('DOMContentLoaded', function(){
 			
 		}, true);
 	});
-
 }, true);
 
+	function cambiarDformulario(forms, css){
+		//Formulario "Iniciar sesion"
+		forms[0].classList.toggle(css[0]);
+		forms[0].classList.toggle(css[1]);
+
+		//Formulario1 "Registrarse" 
+		forms[1].classList.toggle(css[0]);
+		forms[1].classList.toggle(css[1]);
+	}
 
 
-function cambiarDformulario(forms, css){
-	//Formulario "Iniciar sesion"
-	forms[0].classList.toggle(css[0]);
-	forms[0].classList.toggle(css[1]);
+}(document));
 
-	//Formulario1 "Registrarse" 
-	forms[1].classList.toggle(css[0]);
-	forms[1].classList.toggle(css[1]);
-}
+
+
+
+
