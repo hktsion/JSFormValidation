@@ -23,8 +23,8 @@
 						</div>
 						<div class="field">
 							<label for="ipassword"></label>
-							<input id="ipassword" type="password" placeholder="Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="La contraseña debe tener al menos 6 caracteres. Al menos una minuscula y una mayuscula, un dígito y alguno de los caracteres %&=¡!" value="A1drtf" required>
-							<!-- oninvalid="setCustomValidity('La contraseña debe tener al menos 6 caracteres. Al menos una minuscula y una mayuscula, un dígito y alguno de los caracteres %&=¡!')" -->
+							<input id="ipassword" type="password" placeholder="Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[$%¡!=])(?=.*[A-Z]).{6,}" title="La contraseña debe tener al menos 6 caracteres. Al menos una minuscula y una mayuscula, un dígito y alguno de los caracteres %&$=¡!" value="A1drtf" required>
+							<!-- " -->
 							<p class="small error"></p>
 						</div>
 						<div class="submit">
@@ -51,12 +51,12 @@
 					<form action="">
 						<div class="field">
 							<label for="rnombre"></label>
-							<input id="rnombre" type="email" placeholder="Nombre" required>
+							<input id="rnombre" type="text" placeholder="Nombre" required>
 							<p class="small error"></p>
 						</div>
 						<div class="field">
 							<label for="rapellidos"></label>
-							<input id="rapellidos" type="email" placeholder="Apellidos" required>
+							<input id="rapellidos" type="text" placeholder="Apellidos" required>
 							<p class="small error"></p>
 						</div>
 						<div class="field">
@@ -66,12 +66,12 @@
 						</div>
 						<div class="field">
 							<label for="rpassword"></label>
-							<input id="rpassword" type="password" placeholder="Contraseña" required>
+							<input id="rpassword" type="password" placeholder="Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[$%¡!=])(?=.*[A-Z]).{6,}" title="La contraseña debe tener al menos 6 caracteres. Al menos una minuscula y una mayuscula, un dígito y alguno de los caracteres %&$=¡!" value="A1drtf" required>
 							<p class="small error"></p>
 						</div>
 						<div class="field">
 							<label for="r2password"></label>
-							<input id="r2password" type="password" placeholder="Repite Contraseña" required>
+							<input id="r2password" type="password" placeholder="Repite Contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[$%¡!=])(?=.*[A-Z]).{6,}" title="La contraseña debe tener al menos 6 caracteres. Al menos una minuscula y una mayuscula, un dígito y alguno de los caracteres %&$=¡!" value="A1drtf" required>
 							<p class="small error"></p>
 						</div>
 						<div class="submit">
@@ -79,7 +79,7 @@
 								<input id="rrecordar" type="checkbox">
 								<label for="rrecordar">Acepto las condiciones</label>
 							</div>
-							<input type="submit" value="Regístate">
+							<input id="rsubmit" type="submit" value="Regístate">
 						</div>
 					</form>
 				</div>
@@ -88,5 +88,22 @@
 	</main>
 
 	<script src="js/main.js"></script>
+	<script>
+		//Validación de que las 2 contraseñas sean iguales
+		(function(d){
+			d.addEventListener('DOMContentLoaded', function(){
+				let rsubmit = d.getElementById('rsubmit');
+				rsubmit.addEventListener('click', (e) =>{
+					let passwords = d.querySelectorAll('#registro input[type="password"]');
+					console.log(passwords[0].value);
+					console.log(passwords[1].value);
+					if(passwords[0].value !== passwords[1].value){
+							e.preventDefault();
+							console.log(d.getElementById('rpassword').nextElementSibling.innerHTML = 'Las contraseñas no coinciden');
+					}
+				});
+			}, true);
+		}(document));
+	</script>
 </body>
 </html>
